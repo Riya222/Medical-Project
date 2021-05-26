@@ -1,0 +1,2 @@
+rootProject.name = "MedHelper"
+include ':app'
