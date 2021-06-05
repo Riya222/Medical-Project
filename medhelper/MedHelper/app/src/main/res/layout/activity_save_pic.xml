@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgn"
+    tools:context=".ReminderActivity">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryTrans"
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/offwhite"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:background="@color/colorPrimaryTrans"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"></TextView>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="67dp"
+                android:layout_height="61dp"
+                android:layout_marginEnd="148dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/camicon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/vw"
+            android:text="View Saved Images"></TextView>
+    </LinearLayout>
+
+</ScrollView>

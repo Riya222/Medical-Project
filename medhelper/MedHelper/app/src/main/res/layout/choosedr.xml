@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:paddingLeft="80dp"
+    android:orientation="horizontal"
+    android:background="@drawable/round3"
+    tools:context=".ViewDoctors">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_baseline_person_24"
+        android:paddingLeft="50dp"></ImageView>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="50dp"></TextView>
+    <TextView
+        android:id="@+id/idval"
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="50dp"></TextView>
+    <TextView
+        android:id="@+id/usrn"
+        android:layout_width="20dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:visibility="invisible"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="50dp"></TextView>
+</LinearLayout>

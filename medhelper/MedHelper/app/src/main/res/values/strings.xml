@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MedHelper</string>
+    <string-array name="dostype">
+        <item>Pill</item>
+        <item>Syrup</item>
+    </string-array>
+</resources>
