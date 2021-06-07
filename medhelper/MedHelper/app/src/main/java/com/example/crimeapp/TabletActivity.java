@@ -13,11 +13,11 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class TabletActivity extends AppCompatActivity {
+public class TabletActivity<spinner> extends AppCompatActivity {
 
 
     private Button addTab;
-    TextInputEditText name, descr, medtype, medclr, intake, medtime, dosage, interval, balance;
+    TextInputEditText name, descr, medtype, medclr, intake,medtime, dosage, interval, balance;
     Spinner dosagetype;
     TextView tbview;
     @Override

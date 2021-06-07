@@ -93,6 +93,8 @@
             android:hint="Medicine Time"
             android:inputType="textPersonName"
             android:textColor="#FFFFFF" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
