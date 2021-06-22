@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_user" />
+        android:src="@drawable/ic_login" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -50,6 +50,21 @@
         android:textColorHint="#FFF">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date"
+            android:inputType="date"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColorHint="#FFF">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/times"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,6 +73,22 @@
             android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Image"
+            android:background="@color/offwhite"></TextView>
+        <Button
+            android:id="@+id/btnimg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select"></Button>
+    </LinearLayout>
     <Button
         android:id="@+id/addRem"
         android:layout_width="match_parent"
@@ -67,4 +98,9 @@
         android:text="add reminder"
         android:textColor="#FFF"
         android:textSize="30sp" />
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:id="@+id/imm"
+        android:visibility="invisible"></ImageView>
 </LinearLayout>

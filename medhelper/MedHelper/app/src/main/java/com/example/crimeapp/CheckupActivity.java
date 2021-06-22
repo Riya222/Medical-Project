@@ -205,7 +205,7 @@ public class CheckupActivity extends AppCompatActivity implements View.OnClickLi
 
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         Log.e("function","image");
-        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.189.79:8000/getimage/", new Response.Listener<String>() {
+        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.1.4:8000/getimage/", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

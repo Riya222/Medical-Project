@@ -6,8 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,10 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".viewimage"></activity>
+        <activity android:name=".showAlaramActivity"></activity>
+        <activity android:name=".viewimage" />
         <activity android:name=".ViewOneTab" />
         <activity android:name=".ViewReminders" />
-        <activity android:name=".ViewTablets"></activity>
+        <activity android:name=".ViewTablets" />
         <activity android:name=".SavePicActivity" />
         <activity android:name=".TabletActivity" />
         <activity android:name=".ReminderActivity" />
@@ -34,7 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".MyBroadcastReceiver"/>
+
+        <receiver android:name=".MyBroadcastReceiver" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>

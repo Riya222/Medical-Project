@@ -26,7 +26,32 @@ public class databasequeries extends SQLiteOpenHelper {
     }
 
 
+    public long reminderInsert(String rem, String descr, String times, String img) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try{
+            db.execSQL("create table reminders(ID INTEGER PRIMARY KEY AUTOINCREMENT,rem varchar(100),descr varchar(100),times varchar(100),img varchar(1000000), UNIQUE (rem))");
 
+        }
+        catch(Exception ex){
+            Log.e("<--ERROR-->",ex.toString());
+        }
+        ContentValues cv = new ContentValues();
+        cv.put("rem", rem);
+        cv.put("descr", descr);
+        cv.put("times", times);
+        cv.put("img", img);
+        try {
+            long ab = db.insert("reminders", null, cv);
+            db.close();
+            Log.e("<--Rem-->", "Inserted");
+            return ab;
+        }
+        catch(Exception ex1){
+            long ab=0;
+            Log.e("Ex: ",ex1.toString());
+            return ab;
+        }
+    }
 
     public long userInsert( String email,  String mobile, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -172,36 +197,10 @@ public class databasequeries extends SQLiteOpenHelper {
 
     }
 
-    public long reminderInsert(String rem, String descr, String times) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        try{
-            db.execSQL("create table reminders(ID INTEGER PRIMARY KEY AUTOINCREMENT,rem varchar(100),descr varchar(100),times varchar(100), UNIQUE (rem))");
-
-        }
-        catch(Exception ex){
-            Log.e("<--ERROR-->",ex.toString());
-        }
-        ContentValues cv = new ContentValues();
-        cv.put("rem", rem);
-        cv.put("descr", descr);
-        cv.put("times", times);
-        try {
-            long ab = db.insert("reminders", null, cv);
-            db.close();
-            Log.e("<--Rem-->", "Inserted");
-            return ab;
-        }
-        catch(Exception ex1){
-            long ab=0;
-            Log.e("Ex: ",ex1.toString());
-            return ab;
-        }
-    }
-
     public long saveImage(String username, String encodedImage,String dtm) {
         SQLiteDatabase db = this.getWritableDatabase();
         try{
-            db.execSQL("create table saved(ID INTEGER PRIMARY KEY AUTOINCREMENT,username varchar(100),img varchar(100),dtm varchar(100))");
+            db.execSQL("create table saved(ID INTEGER PRIMARY KEY AUTOINCREMENT,username varchar(100),img varchar(1000000),dtm varchar(100))");
 
         }
         catch(Exception ex){
@@ -238,11 +237,11 @@ public class databasequeries extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(sqlquery,null);
         return cursor;
     }
-public Cursor getimages(String usr){
-    SQLiteDatabase db = this.getWritableDatabase();
-    try {
-        db.execSQL("create table saved(ID INTEGER PRIMARY KEY AUTOINCREMENT,username varchar(100),img varchar(10000000),dtm varchar(100))");
-    }catch(Exception ex){
+    public Cursor getimages(String usr){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL("create table saved(ID INTEGER PRIMARY KEY AUTOINCREMENT,username varchar(100),img varchar(1000000),dtm varchar(100))");
+        }catch(Exception ex){
             Log.e("<--ERROR-->",ex.toString());
         }
         String sqlquery="SELECT * FROM saved where username='"+usr+"'";
@@ -250,7 +249,7 @@ public Cursor getimages(String usr){
         Cursor cursor = db.rawQuery(sqlquery,null);
         return cursor;
 
-}
+    }
     public Cursor getTablets() {
         SQLiteDatabase db = this.getWritableDatabase();
         try{
@@ -265,5 +264,34 @@ public Cursor getimages(String usr){
         Cursor cursor = db.rawQuery(sqlquery,null);
         Log.e("cnt: ", ""+cursor.getCount());
         return cursor;
+    }
+    public Cursor getAlarms(String rems) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try{
+            db.execSQL("create table reminders(ID INTEGER PRIMARY KEY AUTOINCREMENT,rem varchar(100),descr varchar(100),times varchar(100),img varchar(1000000), UNIQUE (rem))");
+
+        }
+        catch(Exception ex){
+            Log.e("<--ERROR-->",ex.toString());
+        }
+        String sqlquery="SELECT * FROM reminders where rem='"+rems+"'";
+        Log.e("==>SQLQUERY==>",sqlquery);
+        Cursor cursor = db.rawQuery(sqlquery,null);
+        Log.e("cnt: ", ""+cursor.getCount());
+        return cursor;
+    }
+
+    public Cursor getnum(String user) {
+        Cursor c = null;
+        try {
+            SQLiteDatabase ob4 = this.getWritableDatabase();
+            String st = "select * from  users where email='"+user+"'";
+            c = ob4.rawQuery(st, null);
+
+        } catch (Exception e) {
+            Log.e("1", e.toString());
+
+        }
+        return c;
     }
 }
