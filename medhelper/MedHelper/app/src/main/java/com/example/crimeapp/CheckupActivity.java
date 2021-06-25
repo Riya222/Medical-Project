@@ -205,7 +205,7 @@ public class CheckupActivity extends AppCompatActivity implements View.OnClickLi
 
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         Log.e("function","image");
-        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.1.4:8000/getimage/", new Response.Listener<String>() {
+        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.1.3:8000/getimage/", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -249,7 +249,7 @@ public class CheckupActivity extends AppCompatActivity implements View.OnClickLi
     public void sendData1(final String incomingImageString)
     {
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
-        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.43.109:8000/get_recipe/", new Response.Listener<String>() {
+        StringRequest requ=new StringRequest(Request.Method.POST, "http://192.168.1.3:8000/get_recipe/", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.e("Response is: ", response.toString());

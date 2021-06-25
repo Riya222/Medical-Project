@@ -82,12 +82,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choose Image"
-            android:background="@color/offwhite"></TextView>
+            android:background="@color/offwhite">
+        </TextView>
         <Button
             android:id="@+id/btnimg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select"></Button>
+            android:text="Select">
+        </Button>
     </LinearLayout>
     <Button
         android:id="@+id/addRem"
@@ -102,5 +104,6 @@
         android:layout_width="1dp"
         android:layout_height="1dp"
         android:id="@+id/imm"
-        android:visibility="invisible"></ImageView>
+        android:visibility="invisible">
+    </ImageView>
 </LinearLayout>

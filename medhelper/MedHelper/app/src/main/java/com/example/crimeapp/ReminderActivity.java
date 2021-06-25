@@ -32,7 +32,6 @@ import java.util.Locale;
 
 public class ReminderActivity extends AppCompatActivity {
 
-    private Button btnAdd;
     TextInputEditText rem, descr, times, dates;
     TextToSpeech t1;
     Button btnimg;
@@ -73,7 +72,7 @@ public class ReminderActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd= (Button) findViewById(R.id.addRem);
+        Button btnAdd = (Button) findViewById(R.id.addRem);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -265,6 +264,4 @@ public class ReminderActivity extends AppCompatActivity {
 
 
     }
-
-
 }
